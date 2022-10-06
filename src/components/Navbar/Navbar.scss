@@ -1,0 +1,149 @@
+.navbar {
+  background: transparent;
+  color: var(--primary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+
+  &__container {
+    padding: 1.5rem;
+    background-color: transparent;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__menu {
+    cursor: pointer;
+    align-self: center;
+    display: block;
+    z-index: 1;
+  }
+
+  &__links-wrapper {
+    background-color: #262933;
+    width: 450px;
+    display: none;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: var(--font-subheading);
+    text-transform: uppercase;
+    padding-top: 118px;
+    padding-left: 32px;
+    letter-spacing: 0.125rem;
+
+    &-item {
+      font-size: 14px;
+      color: var(--primary-color);
+      text-decoration: none;
+      margin-bottom: 32px;
+
+      span {
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &__sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: hsla(230deg, 35%, 10%, 0.6);
+    backdrop-filter: blur(10px);
+  }
+
+  &__line {
+    height: 1px;
+    width: calc(100vw - 1000px);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+    align-self: center;
+    position: absolute;
+    left: 12rem;
+    z-index: 100;
+
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__container {
+      padding: 0;
+    }
+
+    &__logo {
+      padding-top: 24px;
+      padding-left: 40px;
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    &__menu {
+      display: none;
+    }
+
+    &__links-wrapper {
+      display: block;
+
+      span {
+        display: none;
+      }
+    }
+
+    &__links {
+      flex-direction: row;
+      padding: 40px 48px;
+
+      &-item {
+        margin-bottom: 0px;
+      }
+    }
+
+    &__sidebar {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 1080px) {
+    &__container {
+      margin-top: 40px;
+    }
+
+    &__logo {
+      padding-left: 55px;
+    }
+
+    &__links-wrapper {
+      background-color: hsla(230deg, 35%, 10%, 0.6);
+      backdrop-filter: blur(10px);
+      width: 830px;
+
+      span {
+        display: inline-flex;
+      }
+    }
+
+    &__links {
+      justify-content: space-evenly;
+    }
+
+    &__line {
+      display: inline-flex;
+    }
+  }
+}
