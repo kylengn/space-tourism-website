@@ -1,3 +1,6 @@
+@import "./variables";
+@import "./mixins";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -14,6 +17,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.swiper-pagination {
+  top: 250px;
+  &-bullet {
+    background-color: $primaryColor !important;
+  }
+
+  @include lgMinBreakPoint {
+    top: 520px;
+
+    &-bullets {
+      width: 15rem !important;
+      padding-left: 6.8rem;
+      transform: scale(1.5) !important;
+    }
+  }
 }
 
 #root {

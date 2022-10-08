@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.crew__container {
+.crew {
   min-height: 100vh;
   width: 100%;
   background-image: url("../../assets/crew/background-crew-mobile.jpg");
@@ -9,11 +9,138 @@
   background-position: center;
   background-size: cover;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 32px;
+  padding: 5rem 2rem;
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5rem;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid $darkColor;
+    width: 100%;
+    img {
+      height: 222px;
+      // width: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  &__occupation {
+    font-family: $fontBellefair;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $darkColor;
+    font-size: 1rem;
+  }
+
+  &__name {
+    font-family: $fontBellefair;
+    font-weight: 400;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: $primaryColor;
+  }
+  &__desc {
+    text-align: center;
+    color: $secondaryColor;
+    line-height: 25px;
+    max-width: 327px;
+    min-width: 100%;
+    font-size: 1rem;
+  }
+
   @include mdMinBreakPoint {
     background-image: url("../../assets/crew/background-crew-tablet.jpg");
+
+    justify-content: space-between;
+    padding-bottom: 0;
+    padding-top: 9rem;
+
+    &__image {
+      order: 2;
+      border: none;
+      position: relative;
+      top: 1.5rem;
+
+      img {
+        height: 50vh;
+      }
+    }
+
+    &__occupation {
+      font-size: 24px;
+    }
+
+    &__name {
+      font-size: 40px;
+    }
+
+    &__desc {
+      max-width: 458px;
+      line-height: 28px;
+    }
   }
 
   @include lgMinBreakPoint {
     background-image: url("../../assets/crew/background-crew-desktop.jpg");
+
+    justify-content: space-between;
+
+    &__slide {
+      flex-direction: row;
+    }
+
+    &__image {
+      flex: 0.6;
+
+      img {
+        height: 712px;
+      }
+    }
+
+    &__content {
+      flex: 0.4;
+      align-items: flex-start;
+      padding-left: 10rem;
+      padding-bottom: 10rem;
+      row-gap: 27px;
+    }
+
+    &__occupation {
+      font-size: 32px;
+    }
+
+    &__name {
+      font-size: 56px;
+    }
+
+    &__desc {
+      max-width: 444px;
+      min-width: 80%;
+      text-align: left;
+      line-height: 2rem;
+      font-size: 1.2rem;
+    }
   }
 }

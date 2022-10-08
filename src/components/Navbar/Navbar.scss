@@ -28,7 +28,7 @@
     cursor: pointer;
     align-self: center;
     display: block;
-    z-index: 1;
+    z-index: 3;
   }
 
   &__links-wrapper {
@@ -66,6 +66,7 @@
     right: 0;
     width: 70%;
     height: 100vh;
+    z-index: 2;
     background-color: hsla(230deg, 35%, 10%, 0.6);
     backdrop-filter: blur(10px);
   }

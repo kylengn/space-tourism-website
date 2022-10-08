@@ -1,1 +1,28 @@
+@import "./styles/variables";
+@import "./styles/mixins";
 
+.page__title {
+  font-family: $fontBarlow;
+  color: $primaryColor;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+  align-self: center;
+
+  span {
+    font-weight: bold;
+    color: hsla(0, 0%, 100%, 0.2);
+    margin-right: 0.5rem;
+  }
+
+  @include mdMinBreakPoint {
+    align-self: flex-start;
+  }
+  @include lgMinBreakPoint {
+    font-size: 34px;
+    padding-left: 10rem;
+
+    span {
+      margin-right: 2rem;
+    }
+  }
+}

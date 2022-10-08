@@ -13,10 +13,11 @@ const Destination = ({ data }) => {
   return (
     <div className="destination">
       {/* A resuable component */}
-      <div className="destination__title">
-        <span>01</span>
+      <div className="page__title">
+        <span>0{destination._id}</span>
         {destination.title}
       </div>
+
       <div className="destination__wrapper">
         <div className="destination__image">
           {destination.content.map((tab, i) => {
