@@ -1,4 +1,7 @@
-.home__container {
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.home {
   min-height: 100vh;
   width: 100%;
   background-image: url("../../assets/home/background-home-mobile.jpg");
@@ -20,24 +23,23 @@
     row-gap: 1rem;
 
     &-subheading {
-      font-family: var(--font-subheading);
-      color: var(--secondary-color);
+      font-family: $fontBarlow;
+      color: $secondaryColor;
       font-weight: 400;
       letter-spacing: 0.125rem;
       font-size: 1rem;
     }
 
     &-heading {
-      font-family: var(--font-base);
-      color: var(--primary-color);
+      font-family: $fontBellefair;
+      color: $primaryColor;
       letter-spacing: 0.25rem;
       font-size: 5rem;
       font-weight: 400;
     }
 
     &-desc {
-      font-family: var(--font-subheading);
-      color: var(--secondary-color);
+      color: $secondaryColor;
       text-align: center;
       line-height: 1.56rem;
       font-weight: 400;
@@ -47,11 +49,12 @@
   }
 
   .home__button {
-    font-family: var(--font-base);
+    font-family: $fontBellefair;
     font-size: 20px;
+    text-decoration: none;
     letter-spacing: 0.1rem;
-    color: var(--black-color);
-    background-color: var(--primary-color);
+    color: $blackColor;
+    background-color: $primaryColor;
     border-radius: 50%;
     text-align: center;
     align-self: center;
@@ -80,7 +83,7 @@
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @include mdMinBreakPoint {
     background-image: url("../../assets/home/background-home-tablet.jpg");
     justify-content: space-evenly;
 
@@ -118,7 +121,7 @@
     }
   }
 
-  @media screen and (min-width: 1080px) {
+  @include lgMinBreakPoint {
     background-image: url("../../assets/home/background-home-desktop.jpg");
 
     flex-direction: row;

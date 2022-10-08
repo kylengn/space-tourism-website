@@ -5,16 +5,17 @@ import Home from "./pages/Home/Home";
 import Destination from "./pages/Destination/Destination";
 import Crew from "./pages/Crew/Crew";
 import Technology from "./pages/Technology/Technology";
+import data from "./assets/shared/data";
 
 function App() {
   return (
     <div className="">
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/crew" element={<Crew />} />
-        <Route path="/destination" element={<Destination />} />
-        <Route path="/technology" element={<Technology />} />
+        <Route exact path="/" element={<Home data={data} />} />
+        <Route path="/crew" element={<Crew data={data} />} />
+        <Route path="/destination" element={<Destination data={data} />} />
+        <Route path="/technology" element={<Technology data={data} />} />
       </Routes>
     </div>
   );

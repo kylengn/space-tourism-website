@@ -1,3 +1,6 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 .technology__container {
   min-height: 100vh;
   width: 100%;
@@ -6,11 +9,11 @@
   background-position: center;
   background-size: cover;
 
-  @media screen and (min-width: 768px) {
+  @include mdMinBreakPoint {
     background-image: url("../../assets/technology/background-technology-tablet.jpg");
   }
 
-  @media screen and (min-width: 1080px) {
+  @include lgMinBreakPoint {
     background-image: url("../../assets/technology/background-technology-desktop.jpg");
   }
 }
