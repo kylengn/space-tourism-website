@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.technology__container {
+.technology {
   min-height: 100vh;
   width: 100%;
   background-image: url("../../assets/technology/background-technology-mobile.jpg");
@@ -9,11 +9,170 @@
   background-position: center;
   background-size: cover;
 
+  row-gap: 32px;
+  padding-top: 5rem;
+
+  &__wrapper {
+    width: 100%;
+    height: 80%;
+    margin-top: 32px;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: 30vh;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  &__subheading {
+    font-family: $fontBarlow;
+    color: $secondaryColor;
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    font-size: 1rem;
+  }
+
+  &__name {
+    font-family: $fontBellefair;
+    font-weight: 400;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: $primaryColor;
+  }
+  &__desc {
+    text-align: center;
+    color: $secondaryColor;
+    line-height: 25px;
+    max-width: 327px;
+    font-size: 1rem;
+  }
+
+  .swiper-pagination {
+    top: 33vh;
+    height: 60px;
+
+    &-bullets {
+      display: flex;
+      justify-content: center;
+      column-gap: 1rem;
+    }
+
+    &-bullet {
+      &-active {
+        background-color: $primaryColor;
+        color: $blackColor;
+      }
+      background-color: transparent;
+      color: $primaryColor;
+      border: 1px solid rgba($color: $primaryColor, $alpha: 0.6);
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include mdMinBreakPoint {
+    }
+  }
+
+  .technology-pagination {
+    width: 60px;
+    height: 60px;
+    font-family: $fontBellefair;
+    font-size: 24px;
+  }
+
   @include mdMinBreakPoint {
     background-image: url("../../assets/technology/background-technology-tablet.jpg");
+
+    padding-top: 8rem;
+
+    &__wrapper {
+      margin-top: 60px;
+    }
+
+    &__image {
+      background-size: cover;
+    }
+
+    &__content {
+      margin-top: 44px;
+    }
+
+    &__name {
+      font-size: 40px;
+    }
+
+    &__desc {
+      max-width: 468px;
+    }
   }
 
   @include lgMinBreakPoint {
     background-image: url("../../assets/technology/background-technology-desktop.jpg");
+
+    &__wrapper {
+      height: 80vh;
+    }
+
+    &__slide {
+      flex-direction: row;
+    }
+
+    &__content {
+      flex: 0.4;
+      align-items: flex-start;
+      padding-left: 15rem;
+    }
+
+    &__name {
+      font-size: 56px;
+    }
+
+    &__desc {
+      text-align: left;
+      font-size: 18px;
+      line-height: 2rem;
+    }
+
+    &__image {
+      height: 50vh;
+      flex: 0.5;
+      order: 2;
+      background-size: cover;
+    }
+
+    .swiper-pagination {
+      left: 10vw;
+      top: 10vh;
+      height: auto;
+      width: 60px;
+
+      &-bullets {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 1rem;
+      }
+    }
   }
 }

@@ -6,7 +6,10 @@
   color: $primaryColor;
   text-transform: uppercase;
   letter-spacing: 2.7px;
-  align-self: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
 
   span {
     font-weight: bold;
@@ -15,12 +18,12 @@
   }
 
   @include mdMinBreakPoint {
-    align-self: flex-start;
+    justify-content: flex-start;
   }
   @include lgMinBreakPoint {
     font-size: 34px;
-    padding-left: 10rem;
-
+    position: relative;
+    top: 5rem;
     span {
       margin-right: 2rem;
     }

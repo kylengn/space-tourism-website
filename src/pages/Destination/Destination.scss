@@ -9,13 +9,11 @@
   background-position: center;
   background-size: cover;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   row-gap: 32px;
-  padding: 5rem 2rem;
+  padding-top: 5rem;
 
   &__wrapper {
+    margin-top: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,6 +147,10 @@
     row-gap: 60px;
     padding-top: 8rem;
 
+    &__wrapper {
+      margin-top: 60px;
+    }
+
     &__image {
       img {
         width: 300px;
@@ -197,9 +199,9 @@
     }
 
     &__wrapper {
+      height: 70vh;
       flex-direction: row;
       justify-content: space-evenly;
-      align-items: flex-start;
     }
 
     &__content {

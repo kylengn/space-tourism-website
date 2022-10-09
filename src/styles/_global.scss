@@ -20,23 +20,6 @@ body {
   overflow-x: hidden;
 }
 
-.swiper-pagination {
-  top: 250px;
-  &-bullet {
-    background-color: $primaryColor !important;
-  }
-
-  @include lgMinBreakPoint {
-    top: 520px;
-
-    &-bullets {
-      width: 15rem !important;
-      padding-left: 6.8rem;
-      transform: scale(1.5) !important;
-    }
-  }
-}
-
 #root {
   height: 100%;
 }
