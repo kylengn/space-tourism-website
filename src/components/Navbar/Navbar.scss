@@ -52,10 +52,15 @@
       color: $primaryColor;
       text-decoration: none;
       margin-bottom: 32px;
+      height: 1.5rem;
 
       span {
         font-weight: bold;
         margin-right: 0.5rem;
+      }
+
+      &.active {
+        border-right: 3px solid $primaryColor;
       }
     }
   }
@@ -69,6 +74,14 @@
     z-index: 2;
     background-color: hsla(230deg, 35%, 10%, 0.6);
     backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .active {
+    visibility: visible;
+    opacity: 1;
   }
 
   &__line {
@@ -115,6 +128,19 @@
 
       &-item {
         margin-bottom: 0px;
+
+        &.active {
+          border: none;
+          &::after {
+            content: "";
+            display: block;
+            position: relative;
+            bottom: -40px;
+            left: 0;
+            height: 3px;
+            background-color: $primaryColor;
+          }
+        }
       }
     }
 

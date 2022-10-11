@@ -1,5 +1,6 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
+@import "../..//styles//animations";
 
 .home {
   min-height: 100vh;
@@ -64,7 +65,7 @@
     cursor: pointer;
     width: 150px;
     height: 150px;
-    transition: 0.3s all ease;
+    // transition: 0.3s all ease;
 
     &:hover {
       &::after {
@@ -74,11 +75,14 @@
         align-self: center;
         width: 150px;
         height: 150px;
-        background-color: transparent;
-        transition: 0.3s all ease;
         border-radius: 50%;
-        border: 4rem solid hsla(229deg, 13%, 16%, 0.4);
+        background-color: hsla(229deg, 13%, 16%, 0.7);
         z-index: 0;
+
+        -webkit-animation: puff-out-center 1s cubic-bezier(0.165, 0.84, 0.44, 1)
+          infinite both;
+        animation: puff-out-center 1s cubic-bezier(0.165, 0.84, 0.44, 1)
+          infinite both;
       }
     }
   }

@@ -3,7 +3,7 @@ import "./Navbar.scss";
 import logo from "../../assets/shared/logo.svg";
 import open from "../../assets/shared/icon-hamburger.svg";
 import close from "../../assets/shared/icon-close.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const links = ["home", "destination", "crew", "technology"];
@@ -28,14 +28,19 @@ const Navbar = () => {
         <div className="navbar__links-wrapper">
           <div className="navbar__links">
             {links.map((item, index) => (
-              <Link
-                to={item === "home" ? "/" : item}
-                className="navbar__links-item"
+              <NavLink
+                end
+                to={item === "home" ? "" : item}
+                className={({ isActive }) =>
+                  isActive
+                    ? "active navbar__links-item"
+                    : "inactive navbar__links-item"
+                }
                 key={index}
               >
                 <span>0{index}</span>
                 {item}
-              </Link>
+              </NavLink>
             ))}
           </div>
         </div>
@@ -50,22 +55,27 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Sidebar */}
-        {menuActive && (
-          <div className="navbar__sidebar">
-            <div className="navbar__links">
-              {links.map((item, index) => (
-                <Link
-                  to={item === "home" ? "/" : item}
-                  className="navbar__links-item"
-                  key={index}
-                >
-                  <span>0{index}</span>
-                  {item}
-                </Link>
-              ))}
-            </div>
+
+        <div className={`navbar__sidebar ${menuActive ? "active" : ""}`}>
+          <div className="navbar__links">
+            {links.map((item, index) => (
+              <NavLink
+                end
+                to={item === "home" ? "" : item}
+                className={({ isActive }) =>
+                  isActive
+                    ? "active navbar__links-item"
+                    : "inactive navbar__links-item"
+                }
+                key={index}
+                onClick={toggleMenu}
+              >
+                <span>0{index}</span>
+                {item}
+              </NavLink>
+            ))}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
